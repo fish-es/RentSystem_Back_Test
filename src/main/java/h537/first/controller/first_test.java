@@ -24,7 +24,7 @@ public class first_test {
         String imagePath = "E:\\002code\\003idea\\idea_code\\springboot\\wx-test\\borrow_test\\src\\main\\resources\\static\\1.jpg";
         Path path = Path.of(imagePath);
 
-        // Read the file content into a byte array
+        // Read the file content into a byte array1
         byte[] fileContent = Files.readAllBytes(path);
 
         // Encode the byte array to a Base64 string
