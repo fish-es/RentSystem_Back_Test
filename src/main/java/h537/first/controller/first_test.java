@@ -27,7 +27,7 @@ public class first_test {
         // Read the file content into a byte array1
         byte[] fileContent = Files.readAllBytes(path);
 
-        // Encode the byte array to a Base64 string
+        // Encode the byte array to a Base64 string11111
         String base64EncodedString = Base64.getEncoder().encodeToString(fileContent);
 
         // Print Base64 string to the console
