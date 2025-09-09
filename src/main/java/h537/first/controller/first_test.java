@@ -21,7 +21,7 @@ public class first_test {
     @GetMapping("/get_img")
     public String getImg() throws IOException {
         log.info("get img");
-        String imagePath = "E:\\002code\\003idea\\idea_code\\springboot\\wx-test\\borrow_test\\src\\main\\resources\\static\\1.jpg";
+        String imagePath = "src/main/resources/static/1.jpg";
         Path path = Path.of(imagePath);
 
         // Read the file content into a byte array1
