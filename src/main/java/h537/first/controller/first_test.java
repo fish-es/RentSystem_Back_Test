@@ -20,6 +20,7 @@ public class first_test {
 
     @GetMapping("/get_img")
     public String getImg() throws IOException {
+        log.info("现在没有问题");
         log.info("get img");
         String imagePath = "src/main/resources/static/1.jpg";
         Path path = Path.of(imagePath);
