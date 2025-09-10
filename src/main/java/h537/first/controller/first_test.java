@@ -46,4 +46,37 @@ public class first_test {
         String url = "http://8.138.4.198:8080/" + id + ".jpg";
         return url;
     }
+<<<<<<< Updated upstream
+=======
+
+    @PostMapping("/post_img")
+    public String postImgById(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
+        log.info("post img, name: {}", name);
+
+        // 检查文件是否为空
+        if (file.isEmpty()) {
+            return "文件为空";
+        }
+
+        try {
+            // 定义文件保存路径
+            String uploadPath = "C:\\Users\\31683\\Desktop\\img"; // 示例路径，请根据实际情况修改
+            File destFile = new File(uploadPath, file.getOriginalFilename());
+
+            // 确保目录存在
+            if (!destFile.getParentFile().exists()) {
+                destFile.getParentFile().mkdirs();
+            }
+
+            // 将文件保存到服务器
+            file.transferTo(destFile);
+
+            log.info("文件保存成功: {}", destFile.getAbsolutePath());
+            return "ok";
+        } catch (IOException e) {
+            log.error("文件保存失败", e);
+            return "保存失败";
+        }
+    }
+>>>>>>> Stashed changes
 }
