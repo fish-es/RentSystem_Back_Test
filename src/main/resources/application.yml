@@ -7,3 +7,8 @@ spring:
     url: jdbc:mysql://localhost:3306/borrow_test
     username: root
     password: asd197497
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.apache.catalina.core: DEBUG
