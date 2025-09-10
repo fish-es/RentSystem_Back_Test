@@ -18,6 +18,7 @@ public class first_test {
 
     @GetMapping("/get_img")
     public String getImg() throws IOException {
+        return null;
 
     }
 }
