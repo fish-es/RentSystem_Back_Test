@@ -19,6 +19,7 @@ public class first_test {
     @GetMapping("/get_img")
     public String getImg() throws IOException {
         log.info("1116");
+        log.info("1116");
         return "6666666666666666";
 
     }
