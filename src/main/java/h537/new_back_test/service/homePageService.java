@@ -46,7 +46,7 @@ public class homePageService {
         // 指定文件名，所有图片都使用 .jpg 后缀
         String fileName = id + ".jpg";
 
-        String imgUrl="h537.xyz:8080/get_img/"+id;
+        String imgUrl="http://h537.xyz:8080/get_img/"+id;
         boardGameMapper.setImgUrl(id,imgUrl);
         // 创建目标文件对象
         File destFile = new File(uploadPath, fileName);
@@ -56,5 +56,10 @@ public class homePageService {
         }
         // 将文件保存到服务器
         file.transferTo(destFile);
+    }
+
+    public List<boardGame> searchImgByValue(String value) {
+        List<boardGame> list = boardGameMapper.getBoardGameByValue(value);
+        return list;
     }
 }

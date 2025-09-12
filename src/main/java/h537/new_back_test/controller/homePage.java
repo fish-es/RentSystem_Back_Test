@@ -61,10 +61,19 @@ public class homePage {
         }
     }
 
+
+
     //外部使用，返回10款桌游的信息
     @GetMapping("/get_all_img")//一次获得10张图片图片
     public List<boardGame> getAllImgById(@RequestParam int index) throws IOException {
         List<boardGame> list=homePageService.getAllImgById(index);
+        return list;
+    }
+
+    //外部使用，搜索桌游
+    @GetMapping("/search_img")
+    public List<boardGame> searchImgByValue(@RequestParam String value) throws IOException {
+        List<boardGame> list=homePageService.searchImgByValue(value);
         return list;
     }
 
