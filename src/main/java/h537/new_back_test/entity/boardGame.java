@@ -13,4 +13,5 @@ import org.springframework.web.multipart.MultipartFile;
 public class boardGame {
     int id;
     String name;
+    String imgUrl;
 }

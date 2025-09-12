@@ -28,6 +28,7 @@ public class homePage {
         return "你能成功访问";
     }
 
+    //内部使用，获得单张图片
     @GetMapping("/get_img/{id}")
     public ResponseEntity<byte[]> imgById(@PathVariable("id") int id) {
         System.out.println("进入get_img方法");
@@ -60,12 +61,14 @@ public class homePage {
         }
     }
 
+    //外部使用，返回10款桌游的信息
     @GetMapping("/get_all_img")//一次获得10张图片图片
     public List<boardGame> getAllImgById(@RequestParam int index) throws IOException {
         List<boardGame> list=homePageService.getAllImgById(index);
         return list;
     }
 
+    //外部使用，上传桌游
     @PostMapping("/post_boardGame")//上传图片，内容是二进制的图片和图片的名字
     public String postImgById(@RequestParam("file") MultipartFile file,@RequestParam("name") String name) throws IOException {
         homePageService.post(file,name);

@@ -26,6 +26,7 @@ public class homePageService {
         List<boardGame> list= new ArrayList<>();
         for(int i=index*10+1;i<=index*10+10;i++){
             boardGame game = boardGameMapper.getBoardGameById(i);
+
             list.add(game);
         }
 
@@ -45,6 +46,8 @@ public class homePageService {
         // 指定文件名，所有图片都使用 .jpg 后缀
         String fileName = id + ".jpg";
 
+        String imgUrl="h537.xyz:8080/get_img/"+id;
+        boardGameMapper.setImgUrl(id,imgUrl);
         // 创建目标文件对象
         File destFile = new File(uploadPath, fileName);
         // 确保目录存在
