@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="h537.new_back_test.mapper.BoardGameMapper">
+    <update id="update">
+        UPDATE borrow_test.board_game
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="have != null">have = #{have},</if>
+            <if test="intro != null">intro = #{intro},</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+</mapper>

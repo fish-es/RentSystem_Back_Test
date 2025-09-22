@@ -1,4 +1,4 @@
-package h537.new_back_test.entity;
+package h537.new_back_test.entity.Game_entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class uploadGame {
+public class UploadGame {
     MultipartFile file;
     String name;
 }
