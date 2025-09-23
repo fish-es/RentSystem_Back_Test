@@ -13,7 +13,7 @@ public interface BoardGameMapper {
 
     @Insert("INSERT INTO borrow_test.board_game (name,have,intro) VALUES (#{boardGame.name},#{boardGame.have},#{boardGame.intro})")
     @Options(useGeneratedKeys = true, keyProperty = "boardGame.id")
-    void post(@Param("boardGame") BoardGame boardGame);
+    void postImgById(@Param("boardGame") BoardGame boardGame);
 
     @Update("UPDATE borrow_test.board_game set board_game.img_url = #{fileName} WHERE id = #{id}")
     void setImgUrl(int id, String fileName);

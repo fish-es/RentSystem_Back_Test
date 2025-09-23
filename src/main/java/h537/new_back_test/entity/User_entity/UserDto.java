@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    int id;
+public class UserDto {
+    int uid;
     String name;
-    String username;
     String password;
-    String userImg;
-    int permission;
 }
