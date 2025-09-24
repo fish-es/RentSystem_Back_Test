@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,13 +14,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BoardGameApplication {
     /** 申请人uID */
-    private Long uid;
+    private int uid;
 
     /** 所借桌游ID */
-    private Long gameId;
+    private int gameId;
 
     /** 申请数量 */
-    private Integer quantity;
+    private int quantity;
 
     /** 申请人姓名 */
     private String applicantName;
@@ -31,8 +32,8 @@ public class BoardGameApplication {
     private String applyRemark;
 
     /** 预计取货时间 */
-    private LocalDateTime expectedPickup;
+    private LocalDate expectedPickup;
 
     /** 预计归还时间 */
-    private LocalDateTime expectedReturn;
+    private LocalDate expectedReturn;
 }

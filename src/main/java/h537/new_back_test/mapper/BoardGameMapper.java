@@ -24,5 +24,11 @@ public interface BoardGameMapper {
     @Update("UPDATE borrow_test.board_game set board_game.have =board_game.have-1  WHERE id = #{id}")
     void borrow(int id);
 
+    @Select("select have from borrow_test.board_game where id=#{id}")
+    int getHaveById(int id);
+
     void update(BoardGame boardGame);
+
+    @Select("select status from borrow_test.board_game where id=#{id}")
+    int getStatusById(int gameId);
 }
