@@ -100,12 +100,4 @@ public class BoardGameController {
         return "ok";
     }
 
-
-    //外部使用，借桌游，最简单的版本，还没有完善
-    //TODO传用户的id，来判断是否能借
-    @GetMapping("/borrow")
-    public String borrow(@RequestParam("id") int id) throws IOException {
-        return boardGameService.borrow(id);
-    }
-
 }

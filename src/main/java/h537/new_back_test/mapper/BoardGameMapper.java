@@ -21,8 +21,8 @@ public interface BoardGameMapper {
     @Select("SELECT * FROM borrow_test.board_game WHERE name LIKE CONCAT('%', #{value}, '%')")
     List<BoardGame> getBoardGameByValue(String value);
 
-    @Update("UPDATE borrow_test.board_game set board_game.have =board_game.have-1  WHERE id = #{id}")
-    void borrow(int id);
+    @Update("UPDATE borrow_test.board_game set board_game.have =board_game.have-#{num}  WHERE id = #{id}")
+    void borrow(int id,int num);
 
     @Select("select have from borrow_test.board_game where id=#{id}")
     int getHaveById(int id);

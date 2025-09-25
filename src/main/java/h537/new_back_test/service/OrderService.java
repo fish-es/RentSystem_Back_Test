@@ -24,11 +24,14 @@ public class OrderService {
         //先判断库存够不够或者是否已经下架
         int have=boardGameMapper.getHaveById(boardGameApplication.getGameId());
         if(have==0){
-            return "商品库存为零";
+            return "暂无库存";
+        }
+        if (boardGameApplication.getQuantity()-have>0){
+            return "库存不足，现在只有"+have+"个";
         }
         int status=boardGameMapper.getStatusById(boardGameApplication.getGameId());
         if(status==1){
-            return "商品已经被下架";
+            return "该商品已经被下架";
         }
 
         int id = boardGameApplication.getUid() - 10000;
@@ -40,8 +43,8 @@ public class OrderService {
         //提交订单
         orderMapper.applications(boardGameOrder);
         //库存减一
-        boardGameMapper.borrow(boardGameApplication.getGameId());
-        return "success";
+        boardGameMapper.borrow(boardGameApplication.getGameId(),boardGameApplication.getQuantity());
+        return "预约成功";
     }
 
 }

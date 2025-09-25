@@ -61,17 +61,6 @@ public class BoardGameService {
         return list;
     }
 
-    public String borrow(int id) {
-        BoardGame game = boardGameMapper.getBoardGameById(id);
-        if(game.getStatus()==1){
-            return "商品下架中，无法借";
-        }
-        if(game.getHave()<=0){
-            return "没有库存了，无法借";
-        }
-        boardGameMapper.borrow(id);
-        return "ok";
-    }
 
     public void update(String name, int have, int status, int id,String intro) throws IOException {
         BoardGame boardGame =BoardGame.builder().id(id).name(name).have(have).status(status).intro(intro).build();
